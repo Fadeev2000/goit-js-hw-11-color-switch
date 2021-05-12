@@ -27,10 +27,9 @@ refs.startBtn.addEventListener('click', onClickStart)
 const changeBackgroundColor = () => {
     const item = randomIntegerFromInterval(MIN, MAX);
     refs.bodyEl.style.backgroundColor = colors[item];
-    //console.log(item + '-' + colors[item])
 };
+
 function onClickStart() {
-    //console.log('onClickStart');
     const intervalId = setInterval(changeBackgroundColor, TIME_INTERVAL);
 
     refs.startBtn.setAttribute('disabled', true);
@@ -38,8 +37,6 @@ function onClickStart() {
     refs.stopBtn.addEventListener('click', onClickStop);
 
     function onClickStop() {
-        //console.log('onClickStop');
-        //refs.startBtn.removeEventListener('click', onClickStart)
         clearInterval(intervalId);
         refs.startBtn.removeAttribute('disabled');
     }
